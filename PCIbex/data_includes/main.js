@@ -160,7 +160,6 @@ const askTrialQuestion = askQuestion(
             .center()
             .print(),
         getText("answer_wrong").css("border-bottom", "5px solid lightCoral"),
-        // Penalty for the wrong answer is waiting 1000 ms before continuing
         newTimer("wait", 1000)
             .start()
             .wait()
