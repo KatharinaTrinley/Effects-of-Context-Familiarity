@@ -169,7 +169,7 @@ const askTrialQuestion = askQuestion(
     300
 );
 
-// Display a primer that lasts for X seconds before presenting the sentence/story
+// Display a primer
 const newPrimer = () => [
     newText('primer', '*')
         .css({
@@ -301,7 +301,7 @@ newTrial("start_experiment",
 );
 
 // Experimental trial
-Template("final_materials.csv", row =>
+Template("materials.csv", row =>
     newTrial(
         row.CONDITION,
         newPrimer(),
@@ -323,8 +323,8 @@ Template("final_materials.csv", row =>
         .log("storytopic", row.STORYTOPIC)
 );
 
-// Instructions for memory (duplicated section, needs to be addressed)
-newTrial("instructions-memory",
+// Instructions 
+newTrial("instructions",
     newHtml("instructions_text", "instructions.html")
         .center()
         .cssContainer({
@@ -354,31 +354,6 @@ newTrial("pseudoword_instruction",
         .wait()
 );
 
-/*
-//Targetword questionnaire
-Template("Pseudowords.csv", row =>
-    newTrial("dict",
-        newText("<h2>Bitte geben Sie in maximal einem Satz eine Definition für folgendes Wort</h2>")
-            .print(),
-        newText("targetword", row.TARGETWORD)
-            .print(),
-        newTextInput("targetword", "")
-            .center()
-            .css({
-                "margin": "1em",
-                "height": "100px"
-            })
-            .print()
-            .log(),
-        newButton("Next")
-            .center()
-            .print()
-            .wait()
-    )
-    .log("group", row.GROUP)
-    .log("targetword", row.TARGETWORD)
-);
-*/
 // Targetword questionnaire
 Template("Pseudowords.csv", row =>
     newTrial("dict",
@@ -413,8 +388,8 @@ Template("Pseudowords.csv", row =>
 );
 
 
-// question 1-3
-// Fragebogen 1 
+
+//Post-Experiment Questions
 newTrial("question1",
     newHtml("header", "<h1>Post-Experiment-Fragebogen:</h1>")
         .print(),
@@ -422,7 +397,7 @@ newTrial("question1",
     newHtml("intro", "<p>Ihnen werden nun 5 Post-Experiment-Fragen präsentiert, die Sie beantworten müssen.</p>") //made change: not 4
         .print(),
 
-    // Frage 1
+    // Question 1
     newHtml("question1", `
         <fieldset>
             <legend>Frage 1:</legend>
@@ -436,7 +411,7 @@ newTrial("question1",
     `).log()
     .print(),
 
-    // Frage 2
+    // Question 2
     newHtml("question2", `
         <fieldset>
             <legend>Frage 2:</legend>
@@ -449,7 +424,7 @@ newTrial("question1",
     `).log()
     .print(),
 
-    // Frage 3
+    // Question 3
     newHtml("question3", `
         <fieldset>
             <legend>Frage 3:</legend>
@@ -469,7 +444,7 @@ newTrial("question1",
     
 );
 
-// Fragebogen 2 
+// Question 4 
 newTrial("question4",
     newHtml("header2", "<h1>Fachkenntnisse:</h1>")
         .settings.css({
@@ -488,7 +463,6 @@ newTrial("question4",
         })
         .print(),
 
-    // Fragebogen 2 (continued)
     newHtml("question3Form", `
         <form>
             <fieldset>
@@ -527,7 +501,7 @@ newTrial("question4",
             .wait()
     )
    
-// Frage5
+// Question 5
 newTrial("question5",
     newHtml("header2", "<h1>Bildungsgrad: </h1>")
         .print(),
@@ -582,7 +556,7 @@ newTrial("question5",
 
 
 
-// Confirmation for Prolific
+// Redirection to Prolific
 newTrial("confirmation-prolific",
     newText("<p>Das Experiment ist nun erledigt!</p>").center().print(),
     newText("<p><a href=https://app.prolific.com/submissions/complete?cc=CLRJC2D1> Hier geht es zurück zu Prolific.</a></p>") //insert https for ART and Vocab test
@@ -592,7 +566,7 @@ newTrial("confirmation-prolific",
 )
 .setOption("countsForProgressBar", false);
 
-// Endseite
+// end
 newTrial("end",
     newHtml("end", "end.html")
         .cssContainer({
