@@ -1,0 +1,5 @@
+.PennController {
+    width: 40em !important;
+    margin-left: 50vw;
+    transform: translateX(-50%);
+}
