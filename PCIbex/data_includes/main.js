@@ -1,4 +1,3 @@
-//shorten command lines, keep line here
 PennController.ResetPrefix(null);
 SetCounter("setcounter", 0); // 0 entspricht Gruppe A, 1 entspricht Gruppe B, ,... bis Gruppe L
 
