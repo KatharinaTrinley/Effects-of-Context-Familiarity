@@ -2,7 +2,7 @@
 This repository contains materials from my bachelor thesis, including R code for statistical analysis and PCIbex code for implementing the experiment on [PCIbex](https://farm.pcibex.net/).
 
 ## Materials
-materials.csv: This CSV file contains all materials referenced in the bachelor thesis.
+'materials.csv': This CSV file contains all materials referenced in the bachelor thesis.
 
 ## Statistical Analysis in R
 Statistical_analysis.R: This file contains R code for statistical analysis, including plots and linear mixed-effects regression models (LMERs) mentioned in the study.
