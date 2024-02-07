@@ -1,5 +1,5 @@
 # Effects-of-Context-Familiarity
-This repository contains materials from my bachelor thesis, including R code for statistical analysis and PCIbex code for implementing the experiment on [PCIbex](https://farm.pcibex.net/).
+This repository contains materials from my bachelor thesis, including R code for statistical analysis and JavaScript code for implementing the experiment on [PCIbex](https://farm.pcibex.net/).
 
 ## Materials
 `materials.csv`: This CSV file contains all materials referenced in the bachelor thesis.
